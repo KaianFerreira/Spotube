@@ -2,6 +2,7 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import dotenv from 'dotenv'
+import google from './routes/google/routes.js'
 dotenv.config()
 
 // Routes
@@ -11,8 +12,11 @@ const app = express()
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cors())
-
-
+app.use('/google', google)
+app.get('/test', (req, res) => {
+  console.log('this is a test')
+  return res.send('This is a test')
+})
 const router = express.Router()
 
 //routes
