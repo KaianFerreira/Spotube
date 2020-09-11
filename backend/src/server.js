@@ -13,10 +13,6 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cors())
 app.use('/google', google)
-app.get('/test', (req, res) => {
-  console.log('this is a test')
-  return res.send('This is a test')
-})
 const router = express.Router()
 
 //routes
